@@ -1,10 +1,10 @@
 import urllib.parse, json
-import pyarrow as pa
+# import pyarrow as pa
 from influxdb_client_3.write_client import InfluxDBClient as _InfluxDBClient, WriteOptions, Point
 from influxdb_client_3.write_client.client.write_api import WriteApi as _WriteApi, SYNCHRONOUS, ASYNCHRONOUS, PointSettings
 from influxdb_client_3.write_client.domain.write_precision import WritePrecision
 from influxdb_client_3.write_client.client.exceptions import InfluxDBError
-from pyarrow.flight import FlightClient, Ticket, FlightCallOptions
+# from pyarrow.flight import FlightClient, Ticket, FlightCallOptions
 from influxdb_client_3.read_file import UploadFile
 import urllib.parse
 try:
@@ -124,7 +124,7 @@ class InfluxDBClient3:
         
         if query_port_overwrite is not None:
             port = query_port_overwrite
-        self._flight_client = FlightClient(f"grpc+tls://{hostname}:{port}", **self._flight_client_options)
+        # self._flight_client = FlightClient(f"grpc+tls://{hostname}:{port}", **self._flight_client_options)
 
     def _merge_options(self, defaults, custom={}):
         """

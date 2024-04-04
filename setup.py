@@ -9,37 +9,39 @@ requires = [
     'python_dateutil >= 2.5.3',
     'setuptools >= 21.0.0',
     'urllib3 >= 1.26.0',
-    'pyarrow >= 8.0.0'
+    # 'pyarrow >= 8.0.0'
 ]
 
-with open("./README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+version = "v0.3.6a"
 
-def get_version_from_github_ref():
-    github_ref = os.environ.get("GITHUB_REF")
-    if not github_ref:
-        return None
+# with open("./README.md", "r", encoding="utf-8") as fh:
+#     long_description = fh.read()
 
-    match = re.match(r"refs/tags/v(\d+\.\d+\.\d+)", github_ref)
-    if not match:
-        return None
+# def get_version_from_github_ref():
+#     github_ref = os.environ.get("GITHUB_REF")
+#     if not github_ref:
+#         return None
+# 
+#     match = re.match(r"refs/tags/v(\d+\.\d+\.\d+)", github_ref)
+#     if not match:
+#         return None
+# 
+#     return match.group(1)
 
-    return match.group(1)
-
-def get_version():
-    # If running in GitHub Actions, get version from GITHUB_REF
-    version = get_version_from_github_ref()
-    if version:
-        return version
-
-    # Fallback to a default version if not in GitHub Actions
-    return "v0.0.0"
+# def get_version():
+#     # If running in GitHub Actions, get version from GITHUB_REF
+#     version = get_version_from_github_ref()
+#     if version:
+#         return version
+# 
+#     # Fallback to a default version if not in GitHub Actions
+#     return "v0.0.0"
 
 setup(
-    name='influxdb3-python',
-    version=get_version(),
+    name='influxdb3-python-JHe',
+    version=version,
     description='Community Python client for InfluxDB 3.0',
-    long_description=long_description,
+    # long_description=long_description,
     long_description_content_type="text/markdown",
     author='InfluxData',
     author_email='contact@influxdata.com',

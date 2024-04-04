@@ -1,11 +1,11 @@
 import os
-import pyarrow.csv as csv
-import pyarrow.feather as feather
-import pyarrow.parquet as parquet
+# import pyarrow.csv as csv
+# import pyarrow.feather as feather
+# import pyarrow.parquet as parquet
 
 # Check if the OS is not Windows
-if os.name != 'nt':
-    import pyarrow.orc as orc
+# if os.name != 'nt':
+#     import pyarrow.orc as orc
 
 
 class UploadFile:
